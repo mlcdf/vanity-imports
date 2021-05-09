@@ -3,7 +3,14 @@
 
 Generate HTML pages that allows you to set ["custom" or "vanity" import paths](https://golang.org/doc/go1.4#canonicalimports) for your Go packages using the `go-import` meta tag ([read the specs](https://golang.org/cmd/go/#hdr-Remote_import_paths)).
 
-For example, this package is import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`)
+For example, this package is import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`).
+
+## Highlights
+
+- Painless to host: it's only static files
+- Designed to be used in CI environment: ship as single binary with no OS dependencies
+- Easy to configure and extend via a single TOML configuration file
+
 ## Install
 
 - From [GitHub releases](https://github.com/mlcdf/dyndns/releases): download the binary corresponding to your OS and architecture.
@@ -12,6 +19,7 @@ For example, this package is import path is `go.mlcdf.fr/vanity-imports` (instea
 ```sh
 go get go.mlcdf.fr/vanity-imports
 ```
+
 ## Usage
 
 ```
@@ -35,7 +43,6 @@ vanity-imports
 
 Upload the content of the `dist` directory to your web server.
 
-
 ## Configuration format
 
 Format for the `.vanity-imports.toml` file.
@@ -57,6 +64,11 @@ title = "" # required
 name = "dyndns" # required
 repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source repository
 ```
+
+## Examples
+
+Checkout the [netlify](https://github.com/mlcdf/vanity-imports/tree/netlify) branch to find the code behind https://go.mlcdf.fr/.
+
 ## Run Locally
 
 Clone the project
@@ -76,7 +88,6 @@ Start the app
 ```bash
   go run .
 ```
-
 
 ## License
 
