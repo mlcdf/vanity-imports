@@ -14,4 +14,4 @@ chmod +x ./vanity-imports
 # Build the pages using .vanity-imports.toml to ./dist
 ./vanity-imports
 
-# => https://go.mlcdf.fr
+echo "https://go.mlcdf.fr"
