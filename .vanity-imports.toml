@@ -9,7 +9,7 @@ title = "Maxime's go packages"
 
 [repos."/envpath"]
 name = "envpath"
-repo = "https://github.com/mlcdf/envpath"
+repo = "https://github.com/mlcdf/go"
 
 [repos."/vanity-imports"]
 name = "vanity-imports"
