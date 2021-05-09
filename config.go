@@ -70,7 +70,7 @@ func (c Config) isValid() error {
 		return errors.New("basePath is empty or missing in config")
 	}
 
-	if c.Index == (Index{}) || c.Index.Title == "" {
+	if c.Index == (Index{}) && c.Index.Title == "" {
 		return errors.New("index.title is empty or missing in config")
 	}
 
