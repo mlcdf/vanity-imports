@@ -10,3 +10,7 @@ title = "Maxime's go modules"
 [repos."/go"]
 name = "go"
 repo = "https://github.com/mlcdf/go"
+
+[repos."/vanity-imports"]
+name = "vanity-imports"
+repo = "https://github.com/mlcdf/vanity-imports"
