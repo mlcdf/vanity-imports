@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+var Version = "(devel)"
+
 const usage = `Usage:
     vanity-urls [OPTION]
 
@@ -30,6 +32,11 @@ func main() {
 	flag.BoolVar(&versionFlag, "V", versionFlag, "print the version")
 
 	flag.Parse()
+
+	if versionFlag {
+		log.Println(Version)
+		return
+	}
 
 	config, err := NewConfig(configFlag)
 	if err != nil {
