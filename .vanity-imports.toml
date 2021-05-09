@@ -1,0 +1,12 @@
+basePath = "go.mlcdf.fr"
+
+[index]
+description = ""
+extra_head = ""
+title = "Maxime's go modules"
+
+[repos]
+
+[repos."/go"]
+name = "go"
+repo = "https://github.com/mlcdf/go"
