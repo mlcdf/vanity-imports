@@ -1,4 +1,4 @@
-module github.com/mlcdf/vanity-imports
+module go.mlcdf.fr/vanity-imports
 
 go 1.16
 
