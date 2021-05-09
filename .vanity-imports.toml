@@ -3,7 +3,7 @@ basePath = "go.mlcdf.fr"
 [index]
 description = ""
 extra_head = ""
-title = "Maxime's go modules"
+title = "Maxime's go packages"
 
 [repos]
 
