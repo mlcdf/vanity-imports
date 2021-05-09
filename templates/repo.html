@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="go-import" content="https://{{ .Config.BasePath }}{{ .Path }} git {{ .Repo.URL }}">
-    <meta name="go-source" content="https://{{ .Config.BasePath }}{{ .Path }} {{ .Repo.URL }} {{ .Repo.URL }}tree/master{/dir} {{ .Repo.URL }}blob/master{/dir}/{file}#L{line}">
+    <meta name="go-import" content="{{ .Config.BasePath }}{{ .Path }} git {{ .Repo }}">
+    <meta name="go-source" content="{{ .Config.BasePath }}{{ .Path }} _ {{ .Repo }}tree/master{/dir} {{ .Repo.URL }}blob/master{/dir}/{file}#L{line}">
     <meta http-equiv="refresh" content="0; url=https://pkg.go.dev/{{ .Config.BasePath }}{{ .Path }}">
     <title>{{ .Config.BasePath }}{{ .Path }}</title>
 </head>

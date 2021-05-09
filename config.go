@@ -35,6 +35,10 @@ type Repository struct {
 	Name        string `toml:"name"`
 }
 
+func (r *Repository) String() string {
+	return r.URL
+}
+
 func NewConfig(path string) (*Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
