@@ -13,7 +13,7 @@ const usage = `Usage:
     vanity-urls [OPTION]
 
 Options:
-    --config CONFIG         path to the config. Defaults to .vanity-imports.toml
+    -c, --config CONFIG     path to the config. Defaults to .vanity-imports.toml
     -V, --version           print version
 `
 
@@ -26,6 +26,7 @@ func main() {
 		versionFlag bool
 	)
 
+	flag.StringVar(&configFlag, "c", configFlag, "path to the config")
 	flag.StringVar(&configFlag, "config", configFlag, "path to the config")
 
 	flag.BoolVar(&versionFlag, "version", versionFlag, "print the version")
