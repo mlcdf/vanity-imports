@@ -35,7 +35,7 @@ type Repository struct {
 	Name        string `toml:"name"`
 }
 
-func (r *Repository) String() string {
+func (r Repository) String() string {
 	return r.URL
 }
 
