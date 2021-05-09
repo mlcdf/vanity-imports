@@ -8,7 +8,7 @@ For example, this package is import path is `go.mlcdf.fr/vanity-imports` (instea
 ## Highlights
 
 - Painless to host: it's only static files
-- Designed to be used in CI environment: ship as single binary with no OS dependencies
+- Designed to be used in a CI environment: ship as single binary with no OS dependencies
 - Easy to configure and extend via a single TOML configuration file
 
 ## Install
