@@ -6,8 +6,10 @@ LOCATION=$(curl -s https://api.github.com/repos/mlcdf/vanity-imports/releases/la
 echo $LOCATION
 curl -L "${LOCATION}" -o vanity-imports
 
-# Print the version for debugging
-vanity-imports --version
+chmod +x ./vanity-imports
 
-# Build the pages using .vanity-imports.toml
-vanity-imports
+# Print the version for debugging
+./vanity-imports --version
+
+# Build the pages using .vanity-imports.toml to ./dist
+./vanity-imports
