@@ -1,6 +1,8 @@
 package main
 
 import (
+	"errors"
+	"fmt"
 	"os"
 
 	_ "embed"
@@ -59,5 +61,27 @@ func NewConfig(path string) (*Config, error) {
 		config.IndexTemplate = indexTmpl
 	}
 
-	return config, nil
+	err = config.isValid()
+	return config, err
+}
+
+func (c Config) isValid() error {
+	if c.BasePath == "" {
+		return errors.New("basePath is empty or missing in config")
+	}
+
+	if c.Index == (Index{}) || c.Index.Title == "" {
+		return errors.New("index.title is empty or missing in config")
+	}
+
+	for path, repo := range c.Repos {
+		if repo.Name == "" {
+			return fmt.Errorf("repo.%s.name is empty or missing in config", path)
+		}
+		if repo.URL == "" {
+			return fmt.Errorf("repo.%s.repo is empty or missing in config", path)
+		}
+	}
+
+	return nil
 }
