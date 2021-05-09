@@ -10,7 +10,7 @@ import (
 var Version = "(devel)"
 
 const usage = `Usage:
-    vanity-urls [OPTION]
+    vanity-imports [OPTION]
 
 Options:
     -c, --config CONFIG     path to the config. Defaults to .vanity-imports.toml
