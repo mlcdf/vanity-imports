@@ -1,9 +1,7 @@
 basePath = "go.mlcdf.fr"
 
 [index]
-description = ""
-extra_head = ""
-title = "Maxime's go packages"
+title = "Go packages by <a href="https://mlcdf.fr">mlcdf</a>"
 
 [repos]
 
