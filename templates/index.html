@@ -46,9 +46,9 @@
             {{ range $path, $repo := .Repos }}
             <tbody>
                 <tr>
-                    <td class="pv3 pr3 bb b--black-10">{{ $.BasePath }}{{ $path }}</td>
+                    <td class="pv3 pr3 bb b--black-10">{{ $.Domain }}{{ $path }}</td>
                     <td class="pv3 pl3 bb b--black-10"><a href="{{ $repo.URL }}">{{ replace $repo.URL "https://" "" }}</a></td>
-                    <td class="pv3 pl3 bb b--black-10"><a href="https://pkg.go.dev/{{ $.BasePath }}{{ $path }}">pkg.go.dev/{{ $.BasePath }}{{ $path }}</a></td>
+                    <td class="pv3 pl3 bb b--black-10"><a href="https://pkg.go.dev/{{ $.Domain }}{{ $path }}">pkg.go.dev/{{ $.Domain }}{{ $path }}</a></td>
                 </tr>
             </tbody>
             {{ end }}

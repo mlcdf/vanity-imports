@@ -14,7 +14,7 @@ import (
 const defaultConfigName = ".vanity-imports.toml"
 
 const sampleConfig = `
-basePath = "go.example.com"
+domain = "go.example.com"
 
 [index]
 description = ""
@@ -35,10 +35,10 @@ var indexTmpl string
 
 type Config struct {
 	Repos         map[string]Repository `toml:"repos"`
-	BasePath      string                `toml:"basePath"`
+	Domain        string                `toml:"domain"`
 	Index         Index                 `toml:"index"`
-	RepoTemplate  string                `toml:"repoTemplate"`
-	IndexTemplate string                `toml:"indexTemplate"`
+	RepoTemplate  string                `toml:"repo_template"`
+	IndexTemplate string                `toml:"index_template"`
 	Output        string                `toml:"output" default:"dist"`
 }
 
@@ -81,8 +81,8 @@ func newConfig(path string) (*Config, error) {
 }
 
 func (c Config) isValid() error {
-	if c.BasePath == "" {
-		return errors.New("basePath is empty or missing in config")
+	if c.Domain == "" {
+		return errors.New("domain is empty or missing in config")
 	}
 
 	if c.Index == (Index{}) && c.Index.Title == "" {

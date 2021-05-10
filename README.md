@@ -26,7 +26,7 @@ go get go.mlcdf.fr/vanity-imports
 Usage:
     vanity-imports [option]
 
-Options:				
+Options:
     --init                  creates a sample .vanity-imports.toml config file
     -c, --config CONFIG     path to the config. Defaults to .vanity-imports.toml
     -V, --version           print version
@@ -49,10 +49,10 @@ Upload the content of the `dist` directory to your web server or your favorite s
 Format for the `.vanity-imports.toml` file.
 
 ```toml
-basePath = "go.mlcdf.fr" # required
+domain = "go.mlcdf.fr" # required
 output = "output" # default to dist
-repoTemplate = """<golang template>""" # override the default template for the repo page
-indexTemplate = """<golang template>""" # override the default template for the index page
+repo_template = """<golang template>""" # override the default template for the repo page
+index_template = """<golang template>""" # override the default template for the index page
 
 [index]
 description = ""
@@ -61,7 +61,7 @@ title = "" # required
 
 [repos]
 
-[repos."/dyndns"] # basePath + "/dyndns will be your package import path
+[repos."/dyndns"] # domain + "/dyndns will be your package import path
 repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source repository
 ```
 

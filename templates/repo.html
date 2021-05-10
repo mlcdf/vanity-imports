@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="go-import" content="{{ .Config.BasePath }}{{ .Path }} git {{ .Repo }}">
-    <meta name="go-source" content="{{ .Config.BasePath }}{{ .Path }} _ {{ .Repo }}tree/master{/dir} {{ .Repo.URL }}blob/master{/dir}/{file}#L{line}">
-    <meta http-equiv="refresh" content="0; url=https://pkg.go.dev/{{ .Config.BasePath }}{{ .Path }}">
-    <title>{{ .Config.BasePath }}{{ .Path }}</title>
+    <meta name="go-import" content="{{ .Config.Domain }}{{ .Path }} git {{ .Repo }}">
+    <meta name="go-source" content="{{ .Config.Domain }}{{ .Path }} _ {{ .Repo }}tree/master{/dir} {{ .Repo.URL }}blob/master{/dir}/{file}#L{line}">
+    <meta http-equiv="refresh" content="0; url=https://pkg.go.dev/{{ .Config.Domain }}{{ .Path }}">
+    <title>{{ .Config.Domain }}{{ .Path }}</title>
 </head>
 <body>
-    Nothing to see here; <a href='https://pkg.go.dev/{{ .Config.BasePath }}{{ .Path }}'>move along</a>.
+    Nothing to see here; <a href='https://pkg.go.dev/{{ .Config.Domain }}{{ .Path }}'>move along</a>.
 </body>
 </html>
