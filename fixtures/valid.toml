@@ -1,0 +1,9 @@
+domain = "hello"
+
+[index]
+title = "Foobar packages"
+
+[repos]
+
+[repos."/foobar"]
+repo = "https://github.com/foo/bar"

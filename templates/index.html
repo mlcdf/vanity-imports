@@ -31,14 +31,14 @@
 </head>
 <body class="pa4 near-black sans-serif flex flex-column items-center">
     <main class="w-100"  style="max-width: 920px;">
-        <h1 class="f3 fw6">{{ unescape .Index.Title }}</h1>
+        <h1 class="f3 fw6">{{ .Index.Title }}</h1>
         {{ if .Index.Description }}
-        <p class="measure-wide">{{ .Index.Description }}</p>
+        <p class="measure-wide">{{ unescape .Index.Description }}</p>
         {{ end }}
         <table class="collapse mv4 w-100">
             <thead>
                 <tr class="fw6">
-                    <th class="pb2 lh-copy pr3 fw6 tl bb b--black-10">Package</th>
+                    <th class="pb2 lh-copy pr3 fw6 tl bb b--black-10">Name</th>
                     <th class="pb2 lh-copy pl3 fw6 tl bb b--black-10">Source</th>
                     <th class="pb2 lh-copy pl3 fw6 tl bb b--black-10">Documentation</th>
                 </tr>
@@ -48,7 +48,7 @@
                 <tr>
                     <td class="pv3 pr3 bb b--black-10">{{ $.Domain }}{{ $path }}</td>
                     <td class="pv3 pl3 bb b--black-10"><a href="{{ $repo.URL }}">{{ replace $repo.URL "https://" "" }}</a></td>
-                    <td class="pv3 pl3 bb b--black-10"><a href="https://pkg.go.dev/{{ $.Domain }}{{ $path }}">pkg.go.dev/{{ $.Domain }}{{ $path }}</a></td>
+                    <td class="pv3 pl3 bb b--black-10"><a href="https://pkg.go.dev/{{ $.Domain }}{{ $path }}"><img src="https://pkg.go.dev/badge/{{ $.Domain }}{{ $path }}.svg" alt="Go Reference"></a></td>
                 </tr>
             </tbody>
             {{ end }}

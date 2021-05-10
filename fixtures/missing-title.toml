@@ -1,0 +1,6 @@
+domain = "hello"
+
+[repos]
+
+[repos."/foobar"]
+repo = "https://github.com/foo/bar"
