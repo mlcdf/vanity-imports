@@ -62,7 +62,6 @@ title = "" # required
 [repos]
 
 [repos."/dyndns"] # basePath + "/dyndns will be your package import path
-name = "dyndns" # required
 repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source repository
 ```
 

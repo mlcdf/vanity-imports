@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path"
+	"strings"
 )
 
 // Build the pages
@@ -51,6 +52,9 @@ func buildIndex(config *Config) error {
 	funcMap := template.FuncMap{
 		"unescape": func(s string) template.HTML {
 			return template.HTML(s)
+		},
+		"replace": func(input, from, to string) string {
+			return strings.Replace(input, from, to, -1)
 		}}
 
 	t, err := template.New("foo").Funcs(funcMap).Parse(`{{define "T"}}` + config.IndexTemplate + "{{end}}")

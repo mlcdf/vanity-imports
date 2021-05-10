@@ -24,7 +24,6 @@ title = "Jane's go packages"
 [repos]
 
 [repos."/foobar"]
-name = "foobar"
 repo = "https://github.com/jane/foobar"
 `
 
@@ -50,9 +49,7 @@ type Index struct {
 }
 
 type Repository struct {
-	URL         string `toml:"repo"`
-	Description string `toml:"description"`
-	Name        string `toml:"name"`
+	URL string `toml:"repo"`
 }
 
 func (r Repository) String() string {
@@ -93,9 +90,6 @@ func (c Config) isValid() error {
 	}
 
 	for path, repo := range c.Repos {
-		if repo.Name == "" {
-			return fmt.Errorf("repo.%s.name is empty or missing in config", path)
-		}
 		if repo.URL == "" {
 			return fmt.Errorf("repo.%s.repo is empty or missing in config", path)
 		}
