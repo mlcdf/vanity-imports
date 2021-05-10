@@ -1,4 +1,4 @@
-basePath = "go.mlcdf.fr"
+domain = "go.mlcdf.fr"
 
 [index]
 title = """Go packages by <a href="https://mlcdf.fr">mlcdf</a>"""
