@@ -19,3 +19,4 @@
 /Godeps/
 
 /dist
+.vanity-imports.toml

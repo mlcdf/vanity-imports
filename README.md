@@ -3,7 +3,7 @@
 
 Generate HTML pages that allows you to set ["custom" or "vanity" import paths](https://golang.org/doc/go1.4#canonicalimports) for your Go packages using the `go-import` meta tag ([read the specs](https://golang.org/cmd/go/#hdr-Remote_import_paths)).
 
-For example, this package is import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`).
+For example, this package import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`).
 
 ## Highlights
 
@@ -24,16 +24,17 @@ go get go.mlcdf.fr/vanity-imports
 
 ```
 Usage:
-    vanity-imports [OPTION]
+    vanity-imports [option]
 
-Options:
+Options:				
+    --init                  creates a sample .vanity-imports.toml config file
     -c, --config CONFIG     path to the config. Defaults to .vanity-imports.toml
     -V, --version           print version
 ```
 
 First, create a [config file](#configuration-format).
 ```sh
-touch .vanity-imports.toml
+vanity-imports --init
 ```
 
 Generate the HTML pages
@@ -41,7 +42,7 @@ Generate the HTML pages
 vanity-imports
 ```
 
-Upload the content of the `dist` directory to your web server.
+Upload the content of the `dist` directory to your web server or your favorite static hosting service such as GitHub Pages, Netlify or Vercel.
 
 ## Configuration format
 
@@ -74,19 +75,27 @@ Checkout the [netlify](https://github.com/mlcdf/vanity-imports/tree/netlify) bra
 Clone the project
 
 ```bash
-  git clone https://github.com/mlcdf/vanity-imports.git
+git clone https://github.com/mlcdf/vanity-imports.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd vanity-imports
+cd vanity-imports
 ```
 
-Start the app
+Generate the pages
 
 ```bash
-  go run .
+go run .
+```
+
+View the output on your browser
+
+```bash
+cd dist
+python3 -m http.server 8000
+# open your browser to localhost:8000
 ```
 
 ## License

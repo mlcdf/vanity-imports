@@ -3,12 +3,30 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 	"os"
 
 	_ "embed"
 
 	"github.com/pelletier/go-toml"
 )
+
+const defaultConfigName = ".vanity-imports.toml"
+
+const sampleConfig = `
+basePath = "go.example.com"
+
+[index]
+description = ""
+extra_head = ""
+title = "Jane's go packages"
+
+[repos]
+
+[repos."/foobar"]
+name = "foobar"
+repo = "https://github.com/jane/foobar"
+`
 
 //go:embed templates/repo.html
 var repoTmpl string
@@ -41,7 +59,7 @@ func (r Repository) String() string {
 	return r.URL
 }
 
-func NewConfig(path string) (*Config, error) {
+func newConfig(path string) (*Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
@@ -83,5 +101,14 @@ func (c Config) isValid() error {
 		}
 	}
 
+	return nil
+}
+
+func initSampleConfig() error {
+	if _, err := os.Stat(defaultConfigName); os.IsNotExist(err) {
+		return os.WriteFile(defaultConfigName, []byte(sampleConfig), 0777)
+	}
+
+	log.Printf("%s already exists\n", defaultConfigName)
 	return nil
 }

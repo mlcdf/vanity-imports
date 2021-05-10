@@ -10,9 +10,10 @@ import (
 var Version = "(devel)"
 
 const usage = `Usage:
-    vanity-imports [OPTION]
+    vanity-imports [option]
 
-Options:
+Options:				
+    --init                  creates a sample .vanity-imports.toml config file
     -c, --config CONFIG     path to the config. Defaults to .vanity-imports.toml
     -V, --version           print version
 `
@@ -22,12 +23,15 @@ func main() {
 	flag.Usage = func() { fmt.Fprint(os.Stderr, usage) }
 
 	var (
-		configFlag  string = ".vanity-imports.toml"
+		configFlag  string = defaultConfigName
 		versionFlag bool
+		initFlag    bool
 	)
 
 	flag.StringVar(&configFlag, "c", configFlag, "path to the config")
 	flag.StringVar(&configFlag, "config", configFlag, "path to the config")
+
+	flag.BoolVar(&initFlag, "init", initFlag, "creates a sample .vanity-imports.toml config file")
 
 	flag.BoolVar(&versionFlag, "version", versionFlag, "print the version")
 	flag.BoolVar(&versionFlag, "V", versionFlag, "print the version")
@@ -39,7 +43,15 @@ func main() {
 		return
 	}
 
-	config, err := NewConfig(configFlag)
+	if initFlag {
+		err := initSampleConfig()
+		if err != nil {
+			log.Fatal(err)
+		}
+		return
+	}
+
+	config, err := newConfig(configFlag)
 	if err != nil {
 		log.Fatal(err)
 	}
