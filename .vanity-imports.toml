@@ -5,10 +5,11 @@ title = """Go packages by <a href="https://mlcdf.fr">mlcdf</a>"""
 
 [repos]
 
-[repos."/envpath"]
-name = "envpath"
-repo = "https://github.com/mlcdf/go"
+[repos."/sc-backup"]
+repo = "https://github.com/mlcdf/sc-backup"
+
+[repos."/dyndns"]
+repo = "https://github.com/mlcdf/dyndns"
 
 [repos."/vanity-imports"]
-name = "vanity-imports"
 repo = "https://github.com/mlcdf/vanity-imports"
