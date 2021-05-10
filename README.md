@@ -1,6 +1,9 @@
 
 # vanity-imports
 
+[![test](https://github.com/mlcdf/vanity-imports/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/mlcdf/vanity-imports/actions/workflows/test.yml)
+
+
 Generate HTML pages that allows you to set ["custom" or "vanity" import paths](https://golang.org/doc/go1.4#canonicalimports) for your Go packages using the `go-import` meta tag ([read the specs](https://golang.org/cmd/go/#hdr-Remote_import_paths)).
 
 For example, this package import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`).
