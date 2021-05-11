@@ -13,6 +13,7 @@ For example, this package import path is `go.mlcdf.fr/vanity-imports` (instead o
 - Painless to host: it's only static files
 - Designed to be used in a CI environment: ship as single binary with no OS dependencies
 - Easy to configure and extend via a single TOML configuration file
+- Use your own template for the index and the repo pages.
 
 ## Install
 
