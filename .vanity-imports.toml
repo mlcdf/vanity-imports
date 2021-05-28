@@ -15,7 +15,7 @@ repo = "https://github.com/mlcdf/dyndns"
 repo = "https://github.com/mlcdf/vanity-imports"
 
 [repos."/go/logging"]
-repo = "https://github.com/mlcdf/go/logging"
+repo = "https://github.com/mlcdf/go"
 
 [repos."/go/envpath"]
-repo = "https://github.com/mlcdf/go/envpath"
+repo = "https://github.com/mlcdf/go"
