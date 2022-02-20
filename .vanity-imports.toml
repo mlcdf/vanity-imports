@@ -16,3 +16,6 @@ repo = "https://github.com/mlcdf/vanity-imports"
 
 [repos."/go"]
 repo = "https://github.com/mlcdf/go"
+
+[repos."/go/build"]
+repo = "https://github.com/mlcdf/go"
