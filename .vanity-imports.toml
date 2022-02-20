@@ -16,10 +16,3 @@ repo = "https://github.com/mlcdf/vanity-imports"
 
 [repos."/go"]
 repo = "https://github.com/mlcdf/go"
-
-[repos."/go/logging"]
-repo = "https://github.com/mlcdf/go"
-
-[repos."/go/envpath"]
-repo = "https://github.com/mlcdf/go"
-
