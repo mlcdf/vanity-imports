@@ -71,7 +71,7 @@ repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source reposito
 
 ## Examples
 
-Checkout the [netlify](https://github.com/mlcdf/vanity-imports/tree/netlify) branch to find the code behind https://go.mlcdf.fr/.
+Check out the [netlify](https://github.com/mlcdf/vanity-imports/tree/netlify) branch to find the code behind https://go.mlcdf.fr/.
 
 ## Run Locally
 
