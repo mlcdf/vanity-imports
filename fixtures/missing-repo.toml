@@ -7,3 +7,4 @@ title = "Foobar packages"
 
 [repos."/foobar"]
 url = "https://github.com/foo/bar"
+vcs = "git"

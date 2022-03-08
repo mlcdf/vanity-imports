@@ -5,3 +5,4 @@ title = "Foobar packages"
 
 [repos."/foobar"]
 repo = "https://github.com/foo/bar"
+vcs = "git"

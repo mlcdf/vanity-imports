@@ -23,6 +23,10 @@ func TestInvalidConfig(t *testing.T) {
 			path:    "missing-repo.toml",
 			message: "repo",
 		},
+		{
+			path:    "missing-vcs.toml",
+			message: "vcs",
+		},
 	}
 	for _, tC := range testCases {
 		t.Run(tC.path, func(t *testing.T) {

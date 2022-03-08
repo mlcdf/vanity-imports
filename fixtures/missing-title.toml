@@ -4,3 +4,4 @@ domain = "hello"
 
 [repos."/foobar"]
 repo = "https://github.com/foo/bar"
+vcs = "git"
