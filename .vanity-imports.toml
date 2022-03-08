@@ -7,12 +7,16 @@ title = "Go Modules — mlcdf"
 
 [repos."/sc-backup"]
 repo = "https://github.com/mlcdf/sc-backup"
+vcs = "git"
 
 [repos."/dyndns"]
 repo = "https://github.com/mlcdf/dyndns"
+vcs = "git"
 
 [repos."/vanity-imports"]
 repo = "https://github.com/mlcdf/vanity-imports"
+vcs = "git"
 
 [repos."/go/build"]
 repo = "https://github.com/mlcdf/go"
+vcs = "git"
