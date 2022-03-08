@@ -1,7 +1,6 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -9,6 +8,7 @@ import (
 	_ "embed"
 
 	"github.com/pelletier/go-toml"
+	"github.com/pkg/errors"
 )
 
 const defaultConfigName = ".vanity-imports.toml"
@@ -50,6 +50,7 @@ type Index struct {
 
 type Repository struct {
 	URL string `toml:"repo"`
+	VCS string `vcs:"repo"`
 }
 
 func (r Repository) String() string {
@@ -59,7 +60,7 @@ func (r Repository) String() string {
 func newConfig(path string) (*Config, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
-		return nil, err
+		return nil, errors.Wrap(err, "cannot open config file")
 	}
 
 	config := &Config{}
@@ -92,6 +93,10 @@ func (c Config) isValid() error {
 	for path, repo := range c.Repos {
 		if repo.URL == "" {
 			return fmt.Errorf("repo.%s.repo is empty or missing in config", path)
+		}
+
+		if repo.VCS == "" {
+			return fmt.Errorf("repo.%s.vcs is empty or missing in config", path)
 		}
 	}
 

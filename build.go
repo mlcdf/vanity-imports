@@ -9,10 +9,15 @@ import (
 	"strings"
 )
 
+type vanityTemplateData struct {
+	Root    string
+	VCS     string
+	RepoURL string
+}
+
 // Build the pages
 func build(config *Config) error {
-
-	t, err := template.New("foo").Parse(`{{define "T"}}` + config.RepoTemplate + "{{end}}")
+	t, err := template.New("").Parse(`{{define "T"}}` + config.RepoTemplate + "{{end}}")
 	if err != nil {
 		return err
 	}
@@ -22,22 +27,24 @@ func build(config *Config) error {
 		return err
 	}
 
-	for _path, repo := range config.Repos {
-		os.MkdirAll(path.Join(wd, config.Output, _path), os.ModePerm)
+	for root, repo := range config.Repos {
+		os.MkdirAll(path.Join(wd, config.Output, root), os.ModePerm)
 
-		dest := path.Join(wd, config.Output, _path, "index.html")
-		log.Printf("%s %s\n", info("Building ["+_path+"]"), dest)
+		dest := path.Join(wd, config.Output, root, "index.html")
+		log.Printf("%s %s\n", info("Building ["+root+"]"), dest)
 
 		f, err := os.OpenFile(dest, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0600)
 		if err != nil {
 			return err
 		}
 
-		err = t.ExecuteTemplate(f, "T", struct {
-			Path   string
-			Repo   Repository
-			Config Config
-		}{_path, repo, *config})
+		data := vanityTemplateData{
+			Root:    path.Join(config.Domain, root),
+			VCS:     repo.VCS,
+			RepoURL: repo.URL,
+		}
+
+		err = t.ExecuteTemplate(f, "T", data)
 
 		if err != nil {
 			return err
@@ -57,7 +64,7 @@ func buildIndex(config *Config) error {
 			return strings.Replace(input, from, to, -1)
 		}}
 
-	t, err := template.New("foo").Funcs(funcMap).Parse(`{{define "T"}}` + config.IndexTemplate + "{{end}}")
+	t, err := template.New("").Funcs(funcMap).Parse(`{{define "T"}}` + config.IndexTemplate + "{{end}}")
 	if err != nil {
 		return err
 	}
