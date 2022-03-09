@@ -17,6 +17,6 @@ vcs = "git"
 repo = "https://github.com/mlcdf/vanity-imports"
 vcs = "git"
 
-[repos."/go"]
-repo = "https://github.com/mlcdf/go"
+[repos."/sally"]
+repo = "https://github.com/mlcdf/sally"
 vcs = "git"
