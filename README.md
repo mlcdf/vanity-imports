@@ -4,7 +4,7 @@
 [![test](https://github.com/mlcdf/vanity-imports/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/mlcdf/vanity-imports/actions/workflows/test.yml)
 
 
-Generate HTML pages that allows you to set ["custom" or "vanity" import paths](https://golang.org/doc/go1.4#canonicalimports) for your Go packages using the `go-import` meta tag ([read the specs](https://golang.org/cmd/go/#hdr-Remote_import_paths)).
+Generate HTML pages that allow you to set ["custom" or "vanity" import paths](https://golang.org/doc/go1.4#canonicalimports) for your Go packages using the `go-import` meta tag ([read the specs](https://golang.org/cmd/go/#hdr-Remote_import_paths)).
 
 For example, this package import path is `go.mlcdf.fr/vanity-imports` (instead of `github.com/mlcdf/vanity-imports`).
 
@@ -46,7 +46,7 @@ Generate the HTML pages
 vanity-imports
 ```
 
-Upload the content of the `dist` directory to your web server or your favorite static hosting service such as GitHub Pages, Netlify or Vercel.
+Upload the content of the `dist` directory to your web server or your favorite static hosting service such as GitHub Pages, OVHcloud Web Hosting or Netlify.
 
 ## Configuration format
 
