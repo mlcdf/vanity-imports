@@ -37,6 +37,14 @@ func TestInvalidConfig(t *testing.T) {
 		})
 	}
 }
+
+func TestSampleConfigIsValid(t *testing.T) {
+	err := initSampleConfig()
+	if err != nil {
+		t.Error(err)
+	}
+}
+
 func TestValidConfig(t *testing.T) {
 	_, err := newConfig(path.Join("fixtures", "valid.toml"))
 	if err != nil {

@@ -25,6 +25,7 @@ title = "Jane's go packages"
 
 [repos."/foobar"]
 repo = "https://github.com/jane/foobar"
+vcs = "git"
 `
 
 //go:embed templates/repo.html
