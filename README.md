@@ -17,7 +17,7 @@ For example, this package import path is `go.mlcdf.fr/vanity-imports` (instead o
 
 ## Install
 
-- From [GitHub releases](https://github.com/mlcdf/dyndns/releases): download the binary corresponding to your OS and architecture.
+- From [GitHub releases](https://github.com/mlcdf/vanity-imports/releases): download the binary corresponding to your OS and architecture.
 - From source (make sure `$GOPATH/bin` is in your `$PATH`):
 
 ```sh
@@ -67,6 +67,7 @@ title = "" # required
 
 [repos."/dyndns"] # domain + "/dyndns will be your package import path
 repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source repository
+vcs = "git"
 ```
 
 ## Example usage
