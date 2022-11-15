@@ -69,36 +69,27 @@ title = "" # required
 repo = "https://github.com/mlcdf/dyndns/" # required. Url to the source repository
 ```
 
-## Examples
+## Example usage
 
 Check out the [netlify](https://github.com/mlcdf/vanity-imports/tree/netlify) branch to find the code behind https://go.mlcdf.fr/.
 
-## Run Locally
-
-Clone the project
-
-```bash
-git clone https://github.com/mlcdf/vanity-imports.git
-```
-
-Go to the project directory
-
-```bash
-cd vanity-imports
-```
+## Development
 
 Generate the pages
-
 ```bash
 go run .
 ```
 
-View the output on your browser
+Regenerate the pages on file changes and start a web server
+on http://localhost:3000.
 
 ```bash
-cd dist
-python3 -m http.server 8000
-# open your browser to localhost:8000
+./scripts/dev.sh
+```
+
+Run the tests
+```sh
+go test ./...
 ```
 
 ## License
