@@ -28,7 +28,10 @@ func build(config *Config) error {
 	}
 
 	for root, repo := range config.Repos {
-		os.MkdirAll(path.Join(wd, config.Output, root), os.ModePerm)
+		err := os.MkdirAll(path.Join(wd, config.Output, root), os.ModePerm)
+		if err != nil {
+			return err
+		}
 
 		dest := path.Join(wd, config.Output, root, "index.html")
 		log.Printf("%s %s\n", info("Building ["+root+"]"), dest)
