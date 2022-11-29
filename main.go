@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 )
 
 var Version = "(devel)"
@@ -49,6 +50,10 @@ func main() {
 			log.Fatal(err)
 		}
 		return
+	}
+
+	if len(os.Args) > 1 {
+		log.Fatalf("unknown argument(s): %s", strings.Join(os.Args[1:], " "))
 	}
 
 	config, err := newConfig(configFlag)
