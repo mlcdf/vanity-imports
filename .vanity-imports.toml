@@ -20,3 +20,7 @@ vcs = "git"
 [repos."/sally"]
 repo = "https://github.com/mlcdf/sally"
 vcs = "git"
+
+[repos."/owh"]
+repo = "https://github.com/mlcdf/owh"
+vcs = "git"
